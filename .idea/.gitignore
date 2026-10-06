@@ -1,0 +1,14 @@
+# Compiled Java classes and output folders
+/out/
+/target/
+*.class
+
+# IntelliJ project and user setting files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS metadata files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76f8fcba-6e0b-40e5-89d5-7f45e789ab7e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0048849387367147" />
+      <entry key="MS500" value="1.606523524321274" />
+      <entry key="S2" value="4.183209249930128" />
+      <entry key="S5" value="8.560642520356708" />
+      <entry key="S10" value="14.872568236994972" />
+      <entry key="S30" value="31.748152364755242" />
+      <entry key="S60" value="54.38312059901515" />
+      <entry key="M2" value="85.76902869109709" />
+      <entry key="M5" value="123.7089729022216" />
+      <entry key="M10" value="144.1744998833473" />
+      <entry key="M15" value="152.73706266629222" />
+      <entry key="M30" value="162.5600680146549" />
+      <entry key="H1" value="168.55314716270055" />
+      <entry key="H2" value="180.4739888237835" />
+      <entry key="H4" value="216.77650723719864" />
+      <entry key="D1" value="453.1020722172475" />
+      <entry key="W1" value="1123.1965995450742" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.0794416858016122E-129" />
+      <entry key="S2" value="1.1164242889896381E-32" />
+      <entry key="S5" value="3.8770501441873734E-13" />
+      <entry key="S10" value="1.452642826008195E-6" />
+      <entry key="S30" value="0.03697306213771396" />
+      <entry key="S60" value="0.47324182297130596" />
+      <entry key="M2" value="1.8025478815311646" />
+      <entry key="M5" value="5.026153333415285" />
+      <entry key="M10" value="7.99069076814652" />
+      <entry key="M15" value="9.522490482205429" />
+      <entry key="M30" value="11.479285259393817" />
+      <entry key="H1" value="12.89693812328498" />
+      <entry key="H2" value="17.687446277337415" />
+      <entry key="H4" value="33.54680116996328" />
+      <entry key="D1" value="127.7744482972896" />
+      <entry key="W1" value="360.67982794390326" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.07448719252948516" />
+      <entry key="MS500" value="1.032287218627455" />
+      <entry key="S2" value="3.926551654010218" />
+      <entry key="S5" value="8.437400639957934" />
+      <entry key="S10" value="14.804230749845807" />
+      <entry key="S30" value="31.756271305976302" />
+      <entry key="S60" value="54.82941791618929" />
+      <entry key="M2" value="87.53981782935489" />
+      <entry key="M5" value="128.70004579327588" />
+      <entry key="M10" value="152.13563785829473" />
+      <entry key="M15" value="162.23552530449714" />
+      <entry key="M30" value="174.02452344309998" />
+      <entry key="H1" value="181.44164100491406" />
+      <entry key="H2" value="198.15544119894543" />
+      <entry key="H4" value="250.3173106770678" />
+      <entry key="D1" value="580.8722402272318" />
+      <entry key="W1" value="1483.874447621393" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3E7i5PtNWX11Bz7p1LjwkaPKF9S" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/georg/IdeaProjects/FilmProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/georg/IdeaProjects/FilmProject/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="FilmProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76f8fcba-6e0b-40e5-89d5-7f45e789ab7e" name="Changes" comment="" />
+      <created>1779535829683</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779535829683</updated>
+      <workItem from="1779535830705" duration="15289000" />
+      <workItem from="1779821722381" duration="3639000" />
+      <workItem from="1779910285920" duration="2689000" />
+      <workItem from="1779956340571" duration="15161000" />
+      <workItem from="1780331527072" duration="2982000" />
+      <workItem from="1780587973319" duration="9904000" />
+      <workItem from="1784316550142" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
