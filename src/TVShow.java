@@ -38,7 +38,9 @@ public class TVShow extends Media {
                 getTitle(), getGenre(), totalEpisodes, totalSeasons, network, getRating(), plot);
     }
 
+
+
     public String getSummary(){
-        return String.format("%s | %s | %s | %.1f/10", getTitle(), getGenre(), getRating());
+        return String.format("%s | %s | %.1f/10", getTitle(), getGenre(), getRating());
     }
 }

@@ -7,11 +7,13 @@ public class MenuHandler {
     private Scanner scanner;
     private WatchList watchList;
     private ArrayList<Media> sampleLibrary;
+    private MediaLog mediaLog;
 
     public MenuHandler() { //Constructor once called will create the 3 objects below without needing to pass in any parameters
         this.scanner = new Scanner(System.in); // creates it itself
         this.watchList = new WatchList();      // creates it itself
         this.sampleLibrary = SampleMediaLibrary.setSampleLibrary();
+        this.mediaLog = new MediaLog();
     }
 
     public void setMenu(){ //creates the initial menu design in the console
@@ -21,8 +23,9 @@ public class MenuHandler {
         System.out.println("If you would like to see your current watchlist, Input: 4");
         System.out.println("If you would like to add something to your  watchlist, Input: 5");
         System.out.println("If you would like to remove something from your  watchlist, Input: 6");
-        System.out.println("If you would like to see an example summary, Input: 7");
-        System.out.println("To exit menu, Input: 8");
+        System.out.println("If you would like to see your log of things seen and rated, Input 7");
+        System.out.println("If you would like to see an example summary, Input: 8");
+        System.out.println("To exit menu, Input: 9");
     }
 
     public void setUp(){//the bulk of conditional logic sits  here
@@ -61,8 +64,10 @@ public class MenuHandler {
                     } else if (choice == 6) {
                         removeFromWatchlist();
                     } else if (choice == 7) {
-                        showSummaryFormat();
+                        showLog();
                     } else if (choice == 8) {
+                        showSummaryFormat();
+                    } else if (choice == 9) {
                         isRunning = false;
                         System.out.println("Thank you!");
                     } else {
@@ -113,29 +118,33 @@ public class MenuHandler {
 
     //call the watchList object method from the WatchList class to print what is in the current watchlist
     public void displayWatchlist() {
-        watchList.printWatchlist();
+        watchList.printList();
     }
+
+    public void showLog(){
+        mediaLog.printList();
+    }
+
+    //TODO Add functionality to add to rating log and to then remove from watchlist if added to log
 
 
     public void addToWatchlist() {
         //create a String to track what is to be added to the watchlist
         String addToWatchlist;
-        //create a flag if the desired movie in in the sample library
+        //create a flag if the desired movie in the sample library
         boolean foundInWatchlist = false;
         System.out.println("Enter what you would like adding to the watchlist:");
         addToWatchlist = scanner.nextLine();
         for (Media media : sampleLibrary) {
-            if (media instanceof Movie) {
                 if (media.getTitle().equalsIgnoreCase(addToWatchlist)) {
                     watchList.addMedia(media);
                     foundInWatchlist = true;
                     System.out.println(String.format("%s added to watchlist", addToWatchlist));
                     break;
                 }
-            }
         }
         if (!foundInWatchlist) {
-            System.out.println("Movie not in sample library");
+            System.out.println("Media not in sample library");
         }
     }
 
@@ -143,7 +152,7 @@ public class MenuHandler {
         String removeFromWatchlist;
         System.out.println("Enter what you would like removing from the watchlist:");
         removeFromWatchlist = scanner.nextLine();
-        if (watchList.isInWatchList(removeFromWatchlist)) {
+        if (watchList.isInList(removeFromWatchlist)) {
             watchList.removeMedia(removeFromWatchlist);
             System.out.println(String.format("%s removed from watchlist", removeFromWatchlist));
         } else {
