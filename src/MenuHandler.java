@@ -16,6 +16,15 @@ public class MenuHandler {
         this.mediaLog = new MediaLog();
     }
 
+    private Media findMediaInLibrary(String title) throws MediaNotFoundException{
+        for (Media media: sampleLibrary){
+            if(media.getTitle().equalsIgnoreCase(title)){
+                return media;
+            }
+        }
+        throw new MediaNotFoundException("'" + "' Not in sample library!");
+    }
+
     public void setMenu(){ //creates the initial menu design in the console
         System.out.println("If you would like to see a list of sample Movies, Input: 1");
         System.out.println("If you would like to see a list of sample TV shows, Input: 2");
@@ -24,11 +33,12 @@ public class MenuHandler {
         System.out.println("If you would like to add something to your  watchlist, Input: 5");
         System.out.println("If you would like to remove something from your  watchlist, Input: 6");
         System.out.println("If you would like to see your log of things seen and rated, Input 7");
-        System.out.println("If you would like to see an example summary, Input: 8");
-        System.out.println("To exit menu, Input: 9");
+        System.out.println("If you would like add to the watch-log  Input 8");
+        System.out.println("If you would like to see an example summary, Input: 9");
+        System.out.println("To exit menu, Input: 10");
     }
 
-    public void setUp(){//the bulk of conditional logic sits  here
+    public void setUp() {//the bulk of conditional logic sits  here
 
         int choice = 0; //create a variable of type int to track what the choice of the user is
         boolean isRunning = true; //once the program is running, set a boolean flag to true initially
@@ -66,8 +76,10 @@ public class MenuHandler {
                     } else if (choice == 7) {
                         showLog();
                     } else if (choice == 8) {
-                        showSummaryFormat();
+                        addToLog();
                     } else if (choice == 9) {
+                        showSummaryFormat();
+                    } else if (choice == 10) {
                         isRunning = false;
                         System.out.println("Thank you!");
                     } else {
@@ -96,9 +108,9 @@ public class MenuHandler {
         System.out.println("Below is a list of sample TV Shows and accepted formats:");
         System.out.println("*******************************************************");
 
-        ArrayList<TVShow> TVshows = SampleMediaLibrary.getTVshows(sampleLibrary);
+        ArrayList<TVShow> TVShows = SampleMediaLibrary.getTVshows(sampleLibrary);
 
-        for (TVShow tv: TVshows){
+        for (TVShow tv: TVShows){
             System.out.println(tv);
             System.out.println();
         }
@@ -125,26 +137,56 @@ public class MenuHandler {
         mediaLog.printList();
     }
 
-    //TODO Add functionality to add to rating log and to then remove from watchlist if added to log
+    public void addToLog() {
 
+        String input;
+        System.out.println("Enter what you would like to add to your watched log: (e.g. Gladiator 7.7)");
+        input = scanner.nextLine();
+
+        String[] args = input.split(",");
+
+        if (args.length != 2) {
+            System.out.println("invalid format, please use: Title, Rating");
+            return;
+        }
+        String title = args[0].trim();
+        double rating;
+
+        try {
+            rating = Double.parseDouble(args[1].trim());
+        } catch (NumberFormatException ex) {
+            System.out.println("Rating must be valid number!");
+            return;
+        }
+
+        try {
+            Media media = findMediaInLibrary(title);
+
+            media.setPersonalRating(rating);
+            mediaLog.addMedia(media);
+
+            if (watchList.isInList(title)){
+                watchList.removeMedia(title);
+            }
+
+            System.out.printf("%s added to log with %.2f rating%n", title, rating);
+
+        } catch (InvalidRatingException | DuplicateMediaException | MediaNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
     public void addToWatchlist() {
         //create a String to track what is to be added to the watchlist
         String addToWatchlist;
-        //create a flag if the desired movie in the sample library
-        boolean foundInWatchlist = false;
         System.out.println("Enter what you would like adding to the watchlist:");
         addToWatchlist = scanner.nextLine();
-        for (Media media : sampleLibrary) {
-                if (media.getTitle().equalsIgnoreCase(addToWatchlist)) {
-                    watchList.addMedia(media);
-                    foundInWatchlist = true;
-                    System.out.println(String.format("%s added to watchlist", addToWatchlist));
-                    break;
-                }
-        }
-        if (!foundInWatchlist) {
-            System.out.println("Media not in sample library");
+        try {
+            Media media = findMediaInLibrary(addToWatchlist);
+            watchList.addMedia(media);
+            System.out.printf("%s added to watchlist", addToWatchlist);
+        } catch (MediaNotFoundException | DuplicateMediaException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -152,12 +194,12 @@ public class MenuHandler {
         String removeFromWatchlist;
         System.out.println("Enter what you would like removing from the watchlist:");
         removeFromWatchlist = scanner.nextLine();
-        if (watchList.isInList(removeFromWatchlist)) {
+        try {
             watchList.removeMedia(removeFromWatchlist);
-            System.out.println(String.format("%s removed from watchlist", removeFromWatchlist));
-        } else {
-            System.out.println("Movie not in watchlist");
-        }
+            System.out.printf("%s removed from watchlist", removeFromWatchlist);
+        } catch (MediaNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            }
     }
 
     public void showSummaryFormat(){

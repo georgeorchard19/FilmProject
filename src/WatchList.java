@@ -10,7 +10,7 @@ public class WatchList extends MediaCollection {
             System.out.println("******************");
             System.out.println("Current Watchlist:");
             for (Media media : items) {
-                System.out.println(media.getTitle() + ": " + (media.isSeen() ? "Marked as seen" : "Not seen yet"));
+                System.out.println(media.getTitle());
             }
         }
     }

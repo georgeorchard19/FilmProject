@@ -4,21 +4,22 @@ public abstract class MediaCollection {
 
         protected ArrayList<Media> items = new ArrayList<>();
 
-        public void addMedia(Media media) {
+        public void addMedia(Media media) throws DuplicateMediaException {
             if (isInList(media.getTitle())) {
-                System.out.println(String.format("%s is already in collection.", media.getTitle()));
+                throw new DuplicateMediaException(media.getTitle() + " is already in collection.");
             } else {
                 items.add(media);
             }
         }
 
-        public void removeMedia(String title) {
-            for (int i = 0; i < items.size(); i++) {
-                if (items.get(i).getTitle().equalsIgnoreCase(title)) {
-                    items.remove(i);
-                    break;
-                }
+        public void removeMedia(String title) throws MediaNotFoundException {
+            if (!isInList(title)) {
+                throw new MediaNotFoundException("'" + title + "' is not in the collection.");
             }
+
+            // If it is in the list, perform the actual removal here:
+            items.removeIf(media -> media.getTitle().equalsIgnoreCase(title));
+
         }
 
         public boolean isInList(String title) {
