@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
 public class MediaLogMenuHandler extends MenuHandler {
 
-   public MediaLogMenuHandler(Scanner scanner, MediaLog mediaLog, WatchList watchList) {
-        this.scanner = scanner;
+   public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList) {
         this.mediaLog = mediaLog;
         this.watchList = watchList;
     }

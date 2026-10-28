@@ -61,7 +61,7 @@ public class MenuHandler {
                         case 5 -> addToWatchlist();
                         case 6 -> removeFromWatchlist();
                         case 7 -> {
-                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(scanner, mediaLog, watchList);
+                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(mediaLog, watchList);
                             logMenu.setUp();
                         }
                         case 10 -> {
