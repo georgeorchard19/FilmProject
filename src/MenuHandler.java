@@ -4,10 +4,15 @@ import java.util.InputMismatchException;
 
 public class MenuHandler {
 
-    private Scanner scanner;
-    private WatchList watchList;
-    private ArrayList<Media> sampleLibrary;
-    private MediaLog mediaLog;
+    //TODO Include an average rating of watchlog
+    //TODO Add way to sort watchlist by year, alphabetically, group by genre, etc
+    //TODO create Abstract MenuHandler class to have subclasses of Watchlist, Media Log, Sample Library to inherit from
+
+
+    protected Scanner scanner;
+    protected WatchList watchList;
+    protected ArrayList<Media> sampleLibrary;
+    protected MediaLog mediaLog;
 
     public MenuHandler() { //Constructor once called will create the 3 objects below without needing to pass in any parameters
         this.scanner = new Scanner(System.in); // creates it itself
@@ -16,19 +21,11 @@ public class MenuHandler {
         this.mediaLog = new MediaLog();
     }
 
-    private Media findMediaInLibrary(String title) throws MediaNotFoundException{
-        for (Media media: sampleLibrary){
-            if(media.getTitle().equalsIgnoreCase(title)){
-                return media;
-            }
-        }
-        throw new MediaNotFoundException("'" + title + "' Not in sample library!");
-    }
-
-    private String promptUser(String message){
+    protected String promptUser(String message){
         System.out.println(message);
         return scanner.nextLine();
     }
+
 
     public void setMenu(){ //creates the initial menu design in the console
         System.out.println("If you would like to see a list of sample Movies, Input: 1");
@@ -38,14 +35,11 @@ public class MenuHandler {
         System.out.println("If you would like to add something to your  watchlist, Input: 5");
         System.out.println("If you would like to remove something from your  watchlist, Input: 6");
         System.out.println("If you would like to see your log of things seen and rated, Input 7");
-        System.out.println("If you would like add to the watch-log  Input 8");
-        System.out.println("If you would like to see an example summary, Input: 9");
         System.out.println("To exit menu, Input: 10");
     }
 
     public void setUp() {//the bulk of conditional logic sits  here
 
-        int choice = 0; //create a variable of type int to track what the choice of the user is
         boolean isRunning = true; //once the program is running, set a boolean flag to true initially
         System.out.println("***************************");
         System.out.println("Welcome to my Media Database");
@@ -57,7 +51,7 @@ public class MenuHandler {
                 setMenu();
                 //try some risky code within the try-catch block.
                 try {
-                    choice = scanner.nextInt(); //scanner will expect an Int
+                    int choice = scanner.nextInt(); //scanner will expect an Int
                     scanner.nextLine();
                     switch (choice) {
                         case 1 -> displaySampleMovieLibrary();
@@ -66,9 +60,10 @@ public class MenuHandler {
                         case 4 -> displayWatchlist();
                         case 5 -> addToWatchlist();
                         case 6 -> removeFromWatchlist();
-                        case 7 -> showLog();
-                        case 8 -> addToLog();
-                        case 9 -> showSummaryFormat();
+                        case 7 -> {
+                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(scanner, mediaLog, watchList);
+                            logMenu.setUp();
+                        }
                         case 10 -> {
                             isRunning = false;
                             System.out.println("Thank you!");
@@ -84,7 +79,16 @@ public class MenuHandler {
 
     }
 
-    public void displaySampleMovieLibrary() {
+    protected Media findMediaInLibrary(String title) throws MediaNotFoundException{
+        for (Media media: sampleLibrary){
+            if(media.getTitle().equalsIgnoreCase(title)){
+                return media;
+            }
+        }
+        throw new MediaNotFoundException("'" + title + "' Not in sample library!");
+    }
+
+    protected void displaySampleMovieLibrary() {
         System.out.println("Below is a list of sample movies and accepted formats:");
         System.out.println("*******************************************************");
             //enhanced for loop for moving through the array of sample, for each movie object, we print it out
@@ -99,7 +103,7 @@ public class MenuHandler {
 
     }
 
-    public void displaySampleTVShowLibrary(){
+    protected void displaySampleTVShowLibrary(){
         System.out.println("Below is a list of sample TV Shows and accepted formats:");
         System.out.println("*******************************************************");
 
@@ -111,7 +115,7 @@ public class MenuHandler {
         }
     }
 
-    public void displaySampleDocumentaryLibrary(){
+    protected void displaySampleDocumentaryLibrary(){
         System.out.println("Below is a list of sample Documentaries and accepted formats:");
         System.out.println("*******************************************************");
 
@@ -124,52 +128,11 @@ public class MenuHandler {
     }
 
     //call the watchList object method from the WatchList class to print what is in the current watchlist
-    public void displayWatchlist() {
+    protected void displayWatchlist() {
         watchList.printList();
     }
 
-    public void showLog(){
-        mediaLog.printList();
-    }
-
-    public void addToLog() {
-
-        String input = promptUser("Enter what you would like to add to your watched log: (e.g. Gladiator 7.7)");
-
-        String[] args = input.split(",");
-
-        if (args.length != 2) {
-            System.out.println("invalid format, please use: Title, Rating");
-            return;
-        }
-        String title = args[0].trim();
-        double rating;
-
-        try {
-            rating = Double.parseDouble(args[1].trim());
-        } catch (NumberFormatException ex) {
-            System.out.println("Rating must be valid number!");
-            return;
-        }
-
-        try {
-            Media media = findMediaInLibrary(title);
-
-            media.setPersonalRating(rating);
-            mediaLog.addMedia(media);
-
-            if (watchList.isInList(title)){
-                watchList.removeMedia(title);
-            }
-
-            System.out.printf("%s added to log with %.2f rating%n", title, rating);
-
-        } catch (InvalidRatingException | DuplicateMediaException | MediaNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-
-    public void addToWatchlist() {
+    protected void addToWatchlist() {
         //create a String to track what is to be added to the watchlist
         String addToWatchlist = promptUser("Enter what you would like adding to the watchlist:");
         try {
@@ -181,7 +144,7 @@ public class MenuHandler {
         }
     }
 
-    public void removeFromWatchlist() {
+    protected void removeFromWatchlist() {
 
         String removeFromWatchlist = promptUser("Enter what you would like removing from the watchlist:");
 
@@ -193,14 +156,6 @@ public class MenuHandler {
             }
     }
 
-    public void showSummaryFormat(){
-        System.out.println("Accepted Summary format:");
-        for (Media media : sampleLibrary) {
-            System.out.println(media.getSummary());
-            System.out.println("*******************************************************");
-            System.out.println();
-        }
-    }
 }
 
 

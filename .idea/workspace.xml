@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f8fcba-6e0b-40e5-89d5-7f45e789ab7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/MediaLogMenuHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MediaLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MediaLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,61 +27,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.586212862173777E-78" />
-      <entry key="S2" value="7.09224022035012E-20" />
-      <entry key="S5" value="4.073400094367477E-8" />
-      <entry key="S10" value="3.470949195318773E-4" />
-      <entry key="S30" value="0.1517278938215305" />
-      <entry key="S60" value="0.9279858273034318" />
-      <entry key="M2" value="3.3174007031158617" />
-      <entry key="M5" value="9.335764948151382" />
-      <entry key="M10" value="16.561733567818063" />
-      <entry key="M15" value="22.13635912970673" />
-      <entry key="M30" value="38.94439252116552" />
-      <entry key="H1" value="76.2427459833066" />
-      <entry key="H2" value="129.4370964924607" />
-      <entry key="H4" value="180.80928877643512" />
-      <entry key="D1" value="319.9860476534085" />
-      <entry key="W1" value="889.8769313068086" />
+      <entry key="MS100" value="6.9591997770638676E-15" />
+      <entry key="MS500" value="0.001474048797383358" />
+      <entry key="S2" value="0.19594219435625582" />
+      <entry key="S5" value="0.5212669117246627" />
+      <entry key="S10" value="0.737649936661764" />
+      <entry key="S30" value="1.155857392125673" />
+      <entry key="S60" value="1.6721467758904174" />
+      <entry key="M2" value="3.155564480392026" />
+      <entry key="M5" value="9.50829405121767" />
+      <entry key="M10" value="19.539602811509745" />
+      <entry key="M15" value="28.739603567723766" />
+      <entry key="M30" value="57.40049134516142" />
+      <entry key="H1" value="111.68116616736845" />
+      <entry key="H2" value="190.85939950515007" />
+      <entry key="H4" value="273.77321373053945" />
+      <entry key="D1" value="462.3153148219112" />
+      <entry key="W1" value="1044.5189320365087" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.000000000002221" />
-      <entry key="S2" value="1.0012207640125648" />
-      <entry key="S5" value="1.0684093045109861" />
-      <entry key="S10" value="1.2701122673482503" />
-      <entry key="S30" value="1.9176041386874159" />
-      <entry key="S60" value="2.7668785078412106" />
-      <entry key="M2" value="4.298255245724965" />
-      <entry key="M5" value="6.880001571729456" />
-      <entry key="M10" value="8.905950403058164" />
-      <entry key="M15" value="10.155064373101391" />
-      <entry key="M30" value="13.88842122212391" />
-      <entry key="H1" value="24.415055824111693" />
-      <entry key="H2" value="43.06802033778519" />
-      <entry key="H4" value="63.16277522858992" />
-      <entry key="D1" value="105.61433271793" />
-      <entry key="W1" value="255.7429529911884" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000623264498" />
+      <entry key="S5" value="1.001933729510488" />
+      <entry key="S10" value="1.0618861393904993" />
+      <entry key="S30" value="1.6282054226053733" />
+      <entry key="S60" value="2.165387782526044" />
+      <entry key="M2" value="2.8745984122659802" />
+      <entry key="M5" value="5.046426579337747" />
+      <entry key="M10" value="8.371905021746077" />
+      <entry key="M15" value="11.195760819421121" />
+      <entry key="M30" value="18.202185533073948" />
+      <entry key="H1" value="30.226687572065916" />
+      <entry key="H2" value="50.95303588480927" />
+      <entry key="H4" value="76.47495409688523" />
+      <entry key="D1" value="131.4879306856663" />
+      <entry key="W1" value="285.03782074024855" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.02179286978672508" />
-      <entry key="MS500" value="0.4652248288517806" />
-      <entry key="S2" value="0.8266005230247345" />
-      <entry key="S5" value="0.9818099257948643" />
-      <entry key="S10" value="1.2063836149650007" />
-      <entry key="S30" value="2.026787727363452" />
-      <entry key="S60" value="3.654505781746195" />
-      <entry key="M2" value="7.569186857111637" />
-      <entry key="M5" value="16.17340504479105" />
-      <entry key="M10" value="25.43480074187923" />
-      <entry key="M15" value="32.26427945279809" />
-      <entry key="M30" value="52.812185080134654" />
-      <entry key="H1" value="100.63868719215371" />
-      <entry key="H2" value="172.4882528749123" />
-      <entry key="H4" value="243.95983627666138" />
-      <entry key="D1" value="425.59700915604344" />
-      <entry key="W1" value="1145.6185956354987" />
+      <entry key="MS100" value="7.862936276310603E-13" />
+      <entry key="MS500" value="0.004069987095516662" />
+      <entry key="S2" value="0.37705817820672777" />
+      <entry key="S5" value="1.0151570449391918" />
+      <entry key="S10" value="1.4917236487724317" />
+      <entry key="S30" value="2.64320471715166" />
+      <entry key="S60" value="3.7505338172873124" />
+      <entry key="M2" value="5.973399904502675" />
+      <entry key="M5" value="14.51386286131407" />
+      <entry key="M10" value="27.875935423266508" />
+      <entry key="M15" value="39.902049723178855" />
+      <entry key="M30" value="75.57292358566187" />
+      <entry key="H1" value="141.88182472649996" />
+      <entry key="H2" value="241.7905686263486" />
+      <entry key="H4" value="350.2320982350582" />
+      <entry key="D1" value="593.798785522819" />
+      <entry key="W1" value="1329.5552926182281" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -91,35 +93,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/georg/IdeaProjects/FilmProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/georg/IdeaProjects/FilmProject/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/georg/IdeaProjects/FilmProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/georg/IdeaProjects/FilmProject/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
