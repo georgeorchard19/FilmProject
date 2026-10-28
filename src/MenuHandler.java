@@ -22,7 +22,12 @@ public class MenuHandler {
                 return media;
             }
         }
-        throw new MediaNotFoundException("'" + "' Not in sample library!");
+        throw new MediaNotFoundException("'" + title + "' Not in sample library!");
+    }
+
+    private String promptUser(String message){
+        System.out.println(message);
+        return scanner.nextLine();
     }
 
     public void setMenu(){ //creates the initial menu design in the console
@@ -48,45 +53,35 @@ public class MenuHandler {
 
             //always run the program while the boolean is true
             while (isRunning) {
-                boolean validInput = true;
                 //call the above method to set up the menu
                 setMenu();
                 //try some risky code within the try-catch block.
                 try {
                     choice = scanner.nextInt(); //scanner will expect an Int
                     scanner.nextLine();
+                    switch (choice) {
+                        case 1 -> displaySampleMovieLibrary();
+                        case 2 -> displaySampleTVShowLibrary();
+                        case 3 -> displaySampleDocumentaryLibrary();
+                        case 4 -> displayWatchlist();
+                        case 5 -> addToWatchlist();
+                        case 6 -> removeFromWatchlist();
+                        case 7 -> showLog();
+                        case 8 -> addToLog();
+                        case 9 -> showSummaryFormat();
+                        case 10 -> {
+                            isRunning = false;
+                            System.out.println("Thank you!");
+                        }
+                        default -> System.out.println("Number inputted is out of range! Input a correct number!\n");
+                    }
                 } catch (InputMismatchException ex) { //If something other than an Int is input, we catch the exception
-                    validInput = false; //set the validInput to false so we only progress with a valid input on line 52
+                    //set the validInput to false so we only progress with a valid input on line 52
                     System.out.println("Error! Invalid input! Ensure Input is a valid choice and try again!\n");
                     scanner.nextLine();
                 }
-                if (validInput) { //Runs if only a valid input is given, ie. the catch block isnt ran
-                    if (choice == 1) {
-                        displaySampleMovieLibrary();
-                    } else if (choice == 2) {
-                        displaySampleTVShowLibrary();
-                    } else if (choice == 3) {
-                        displaySampleDocumentaryLibrary();
-                    } else if (choice == 4) {
-                        displayWatchlist();
-                    } else if (choice == 5) {
-                        addToWatchlist();
-                    } else if (choice == 6) {
-                        removeFromWatchlist();
-                    } else if (choice == 7) {
-                        showLog();
-                    } else if (choice == 8) {
-                        addToLog();
-                    } else if (choice == 9) {
-                        showSummaryFormat();
-                    } else if (choice == 10) {
-                        isRunning = false;
-                        System.out.println("Thank you!");
-                    } else {
-                        System.out.println("Number inputted is out of range! Input a correct number!\n");
-                    }
-                }
             }
+
     }
 
     public void displaySampleMovieLibrary() {
@@ -139,9 +134,7 @@ public class MenuHandler {
 
     public void addToLog() {
 
-        String input;
-        System.out.println("Enter what you would like to add to your watched log: (e.g. Gladiator 7.7)");
-        input = scanner.nextLine();
+        String input = promptUser("Enter what you would like to add to your watched log: (e.g. Gladiator 7.7)");
 
         String[] args = input.split(",");
 
@@ -178,9 +171,7 @@ public class MenuHandler {
 
     public void addToWatchlist() {
         //create a String to track what is to be added to the watchlist
-        String addToWatchlist;
-        System.out.println("Enter what you would like adding to the watchlist:");
-        addToWatchlist = scanner.nextLine();
+        String addToWatchlist = promptUser("Enter what you would like adding to the watchlist:");
         try {
             Media media = findMediaInLibrary(addToWatchlist);
             watchList.addMedia(media);
@@ -191,9 +182,9 @@ public class MenuHandler {
     }
 
     public void removeFromWatchlist() {
-        String removeFromWatchlist;
-        System.out.println("Enter what you would like removing from the watchlist:");
-        removeFromWatchlist = scanner.nextLine();
+
+        String removeFromWatchlist = promptUser("Enter what you would like removing from the watchlist:");
+
         try {
             watchList.removeMedia(removeFromWatchlist);
             System.out.printf("%s removed from watchlist", removeFromWatchlist);
