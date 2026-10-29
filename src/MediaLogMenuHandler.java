@@ -1,3 +1,6 @@
+import java.util.Collection;
+import java.util.Collections;
+
 public class MediaLogMenuHandler extends MenuHandler {
 
    public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList) {
@@ -10,7 +13,9 @@ public class MediaLogMenuHandler extends MenuHandler {
         System.out.println("\n--- Watch Log Options ---");
         System.out.println("1 - View current log");
         System.out.println("2 - Add to watch-log");
-        System.out.println("3 - Exit Menu");
+        System.out.println("3 - Add to watch-log");
+
+        System.out.println("4 - Exit Menu");
     }
 
     @Override
@@ -26,7 +31,8 @@ public class MediaLogMenuHandler extends MenuHandler {
             switch(choice){
                 case 1 -> showLog();
                 case 2 -> addToLog();
-                case 3 -> inMenu = false;
+                case 3 -> Collections.sort(mediaLog);
+                case 4 -> inMenu = false;
             }
         }
     }

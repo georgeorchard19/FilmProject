@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public abstract class MediaCollection {
 
@@ -46,6 +47,8 @@ public abstract class MediaCollection {
 
         public abstract void printList();
 
-
+        public void sortByTitle(){
+            Collections.sort(items);
+        }
     }
 

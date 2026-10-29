@@ -1,4 +1,4 @@
-public abstract class Media {
+public abstract class Media implements Comparable<Media> {
 
     private final String title; // final as cannot be changed
     private final int year;
@@ -6,6 +6,10 @@ public abstract class Media {
     private double rating; // not final as can change over time via API
     private double personalRating;
     private boolean seen;
+
+    public int compareTo (Media m){
+        return title.compareTo(m.getTitle());
+    }
 
     public Media (String title, int year, String genre, double rating){
         this.title = title;
