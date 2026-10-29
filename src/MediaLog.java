@@ -1,5 +1,3 @@
-import java.util.Collections;
-
 public class MediaLog extends MediaCollection{
 
 public void rateMedia(String title, double rating) throws InvalidRatingException{
