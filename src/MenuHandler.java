@@ -27,12 +27,10 @@ public class MenuHandler {
     }
 
     public void setMenu(){ //creates the initial menu design in the console
-        System.out.println("If you would like to see a list of sample Movies, Input: 1");
-        System.out.println("If you would like to see a list of sample TV shows, Input: 2");
-        System.out.println("If you would like to see a list of sample Documentaries, Input: 3");
-        System.out.println("4 - WatchList");
-        System.out.println("5 - LoggedMedia");
-        System.out.println("6 - EXIT");
+        System.out.println("1 - View Sample Media");
+        System.out.println("2 - WatchList");
+        System.out.println("3 - LoggedMedia");
+        System.out.println("4 - EXIT");
     }
 
     public void setUp() {//the bulk of conditional logic sits  here
