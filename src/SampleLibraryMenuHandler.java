@@ -20,6 +20,8 @@ public class SampleLibraryMenuHandler extends MenuHandler{
 
         boolean inMenu = true;
 
+        setMenu();
+
         while (inMenu){
 
             int choice = scanner.nextInt();
