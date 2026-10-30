@@ -1,6 +1,6 @@
 public class MediaLogMenuHandler extends MenuHandler {
 
-   public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList) {
+    public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList) {
         this.mediaLog = mediaLog;
         this.watchList = watchList;
     }
@@ -20,13 +20,13 @@ public class MediaLogMenuHandler extends MenuHandler {
         //create a variable of type int to track what the choice of the user is
         boolean inMenu = true;
 
-        while(inMenu){
+        while (inMenu) {
 
             setMenu();
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            switch(choice){
+            switch (choice) {
                 case 1 -> showLog();
                 case 2 -> addToLog();
                 case 3 -> mediaLog.sortByTitle();
@@ -36,7 +36,7 @@ public class MediaLogMenuHandler extends MenuHandler {
         }
     }
 
-    public void showLog(){
+    public void showLog() {
         mediaLog.printList();
     }
 
@@ -63,15 +63,15 @@ public class MediaLogMenuHandler extends MenuHandler {
         try {
             Media media = findMediaInLibrary(title);
 
-            if(mediaLog.isInList(title)) {
+            if (mediaLog.isInList(title)) {
                 throw new DuplicateMediaException("Already Logged!");
             }
 
-                media.setPersonalRating(rating);
-                mediaLog.addMedia(media);
+            media.setPersonalRating(rating);
+            mediaLog.addMedia(media);
 
 
-            if (watchList.isInList(title)){
+            if (watchList.isInList(title)) {
                 watchList.removeMedia(title);
             }
 
