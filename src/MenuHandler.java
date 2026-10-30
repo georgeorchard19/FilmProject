@@ -16,9 +16,6 @@ public class MenuHandler {
         this.sampleLibrary = SampleMediaLibrary.setSampleLibrary();
         this.mediaLog = new MediaLog();
 
-        System.out.println("***************************");
-        System.out.println("Welcome to my Media Project");
-        System.out.println("***************************\n");
     }
 
     protected String promptUser(String message){
@@ -26,7 +23,12 @@ public class MenuHandler {
         return scanner.nextLine();
     }
 
-    public void setMenu(){ //creates the initial menu design in the console
+    public void setMenu(){
+
+        System.out.println("***************************");
+        System.out.println("Welcome to my Media Project");
+        System.out.println("***************************\n");
+
         System.out.println("1 - View Sample Media");
         System.out.println("2 - WatchList");
         System.out.println("3 - LoggedMedia");
@@ -51,11 +53,11 @@ public class MenuHandler {
                             sampleLibraryMenu.setUp();
                         }
                         case 2 -> {
-                            WatchListMenuHandler watchListMenu = new WatchListMenuHandler(watchList);
+                            WatchListMenuHandler watchListMenu = new WatchListMenuHandler(watchList, scanner);
                             watchListMenu.setUp();
                         }
                         case 3 -> {
-                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(mediaLog, watchList);
+                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(mediaLog, watchList, scanner);
                             logMenu.setUp();
                         }
                         case 4 -> {
@@ -71,15 +73,6 @@ public class MenuHandler {
                 }
             }
 
-    }
-
-    protected Media findMediaInLibrary(String title) throws MediaNotFoundException{
-        for (Media media: sampleLibrary){
-            if(media.getTitle().equalsIgnoreCase(title)){
-                return media;
-            }
-        }
-        throw new MediaNotFoundException("'" + title + "' Not in sample library!");
     }
 }
 

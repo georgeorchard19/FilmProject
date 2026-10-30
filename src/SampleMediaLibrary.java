@@ -163,5 +163,14 @@ public class SampleMediaLibrary {
         return docs;
     }
 
+    public static Media findMediaInLibrary(String title, ArrayList<Media> sampleLibrary) throws MediaNotFoundException{
+        for (Media media: sampleLibrary){
+            if(media.getTitle().equalsIgnoreCase(title)){
+                return media;
+            }
+        }
+        throw new MediaNotFoundException("'" + title + "' Not in sample library!");
+    }
+
 }
 

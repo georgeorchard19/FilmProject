@@ -1,6 +1,7 @@
+import java.util.Scanner;
 public class MediaLogMenuHandler extends MenuHandler {
 
-    public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList) {
+    public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList, Scanner scanner) {
         this.mediaLog = mediaLog;
         this.watchList = watchList;
     }
@@ -61,7 +62,7 @@ public class MediaLogMenuHandler extends MenuHandler {
         }
 
         try {
-            Media media = findMediaInLibrary(title);
+            Media media = SampleMediaLibrary.findMediaInLibrary(title, sampleLibrary);
 
             if (mediaLog.isInList(title)) {
                 throw new DuplicateMediaException("Already Logged!");
