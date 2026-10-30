@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SampleLibraryMenuHandler extends SubMenu{
+public class SampleLibraryMenuHandler extends SubMenu {
 
 
-    public SampleLibraryMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary){
+    public SampleLibraryMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary) {
         super(scanner, sampleMediaLibrary);
     }
 
     @Override
-    public void setMenu(){
+    public void setMenu() {
         System.out.println("\n--- Sample Library Options ---");
         System.out.println("1 - List of sample Movies");
         System.out.println("2 - List of sample TV shows");
@@ -18,18 +18,17 @@ public class SampleLibraryMenuHandler extends SubMenu{
     }
 
     @Override
-    public void setUp(){
+    public void setUp() {
 
         boolean inMenu = true;
 
-        setMenu();
+        while (inMenu) {
 
-        while (inMenu){
-
+            setMenu();
             int choice = getScanner().nextInt();
             getScanner().nextLine();
 
-            switch(choice){
+            switch (choice) {
                 case 1 -> displaySampleMovieLibrary();
                 case 2 -> displaySampleTVShowLibrary();
                 case 3 -> displaySampleDocumentaryLibrary();
@@ -44,7 +43,7 @@ public class SampleLibraryMenuHandler extends SubMenu{
         //enhanced for loop for moving through the array of sample, for each movie object, we print it out
         ArrayList<Movie> movies = SampleMediaLibrary.getMovies(getSampleLibrary());
 
-        for(Movie movie: movies){
+        for (Movie movie : movies) {
             System.out.println(movie);
             System.out.println();
         }
@@ -53,25 +52,25 @@ public class SampleLibraryMenuHandler extends SubMenu{
 
     }
 
-    private void displaySampleTVShowLibrary(){
+    private void displaySampleTVShowLibrary() {
         System.out.println("Below is a list of sample TV Shows and accepted formats:");
         System.out.println("*******************************************************");
 
         ArrayList<TVShow> TVShows = SampleMediaLibrary.getTVshows(getSampleLibrary());
 
-        for (TVShow tv: TVShows){
+        for (TVShow tv : TVShows) {
             System.out.println(tv);
             System.out.println();
         }
     }
 
-    private void displaySampleDocumentaryLibrary(){
+    private void displaySampleDocumentaryLibrary() {
         System.out.println("Below is a list of sample Documentaries and accepted formats:");
         System.out.println("*******************************************************");
 
         ArrayList<Documentary> Docs = SampleMediaLibrary.getDocs(getSampleLibrary());
 
-        for(Documentary doc: Docs){
+        for (Documentary doc : Docs) {
             System.out.println(doc);
             System.out.println();
         }

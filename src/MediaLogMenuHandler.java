@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class MediaLogMenuHandler extends SubMenu {
 
-    private MediaLog mediaLog;
-    private WatchList watchList;
+    private final MediaLog mediaLog;
+    private final WatchList watchList;
 
     public MediaLogMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, MediaLog mediaLog, WatchList watchList) {
         super(scanner, sampleMediaLibrary);

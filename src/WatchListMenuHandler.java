@@ -1,38 +1,38 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class WatchListMenuHandler extends SubMenu{
+public class WatchListMenuHandler extends SubMenu {
 
     WatchList watchList;
 
-public WatchListMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, WatchList watchList){
-    super(scanner, sampleMediaLibrary);
-    this.watchList = watchList;
-}
+    public WatchListMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, WatchList watchList) {
+        super(scanner, sampleMediaLibrary);
+        this.watchList = watchList;
+    }
 
-@Override
-public void setMenu(){
-    System.out.println("\n--- Watch List Options ---");
-    System.out.println("1 - View Watchlist");
-    System.out.println("2 - Add to Watchlist");
-    System.out.println("3 - Remove from Watchlist");
-    System.out.println("4 - Exit Menu");
+    @Override
+    public void setMenu() {
+        System.out.println("\n--- Watch List Options ---");
+        System.out.println("1 - View Watchlist");
+        System.out.println("2 - Add to Watchlist");
+        System.out.println("3 - Remove from Watchlist");
+        System.out.println("4 - Exit Menu");
 
-}
+    }
 
-@Override
-    public void setUp(){
+    @Override
+    public void setUp() {
 
         boolean inMenu = true;
 
-        while (inMenu){
+        while (inMenu) {
 
             setMenu();
 
             int choice = getScanner().nextInt();
             getScanner().nextLine();
 
-            switch(choice){
+            switch (choice) {
                 case 1 -> displayWatchlist();
                 case 2 -> addToWatchlist();
                 case 3 -> removeFromWatchlist();
