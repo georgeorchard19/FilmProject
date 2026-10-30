@@ -20,7 +20,7 @@ public double getAverageRating() {
 
     for (Media media: items){
 
-        sum += media.getRating();
+        sum += media.getPersonalRating();
     }
 
     return sum/items.size();

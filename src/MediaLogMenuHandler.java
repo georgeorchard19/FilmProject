@@ -42,7 +42,7 @@ public class MediaLogMenuHandler extends MenuHandler {
 
     public void addToLog() {
 
-        String input = promptUser("Enter what you would like to add to your watched log: (e.g. Gladiator 7.7)");
+        String input = promptUser("Enter what you would like to add to your watched log: (e.g. Gladiator, 7.7)");
 
         String[] args = input.split(",");
 
@@ -63,8 +63,13 @@ public class MediaLogMenuHandler extends MenuHandler {
         try {
             Media media = findMediaInLibrary(title);
 
-            media.setPersonalRating(rating);
-            mediaLog.addMedia(media);
+            if(mediaLog.isInList(title)) {
+                throw new DuplicateMediaException("Already Logged!");
+            }
+
+                media.setPersonalRating(rating);
+                mediaLog.addMedia(media);
+
 
             if (watchList.isInList(title)){
                 watchList.removeMedia(title);
