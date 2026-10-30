@@ -1,10 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class WatchListMenuHandler extends MenuHandler{
+public class WatchListMenuHandler extends SubMenu{
 
-public WatchListMenuHandler(WatchList watchList, Scanner scanner){
+    WatchList watchList;
+
+public WatchListMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, WatchList watchList){
+    super(scanner, sampleMediaLibrary);
     this.watchList = watchList;
-    this.scanner = scanner;
 }
 
 @Override
@@ -26,8 +29,8 @@ public void setMenu(){
 
             setMenu();
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = getScanner().nextInt();
+            getScanner().nextLine();
 
             switch(choice){
                 case 1 -> displayWatchlist();
@@ -48,7 +51,7 @@ public void setMenu(){
         //create a String to track what is to be added to the watchlist
         String addToWatchlist = promptUser("Enter what you would like adding to the watchlist:");
         try {
-            Media media = SampleMediaLibrary.findMediaInLibrary(addToWatchlist, sampleLibrary);
+            Media media = SampleMediaLibrary.findMediaInLibrary(addToWatchlist, getSampleLibrary());
             watchList.addMedia(media);
             System.out.printf("%s added to watchlist", addToWatchlist);
         } catch (MediaNotFoundException | DuplicateMediaException e) {

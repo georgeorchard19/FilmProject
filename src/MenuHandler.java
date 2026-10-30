@@ -10,24 +10,19 @@ public class MenuHandler {
     protected ArrayList<Media> sampleLibrary;
     protected MediaLog mediaLog;
 
-    public MenuHandler() { //Constructor once called will create the 3 objects below without needing to pass in any parameters
-        this.scanner = new Scanner(System.in); // creates it itself
-        this.watchList = new WatchList();      // creates it itself
-        this.sampleLibrary = SampleMediaLibrary.setSampleLibrary();
-        this.mediaLog = new MediaLog();
-
-    }
-
-    protected String promptUser(String message){
-        System.out.println(message);
-        return scanner.nextLine();
-    }
-
-    public void setMenu(){
+    public MenuHandler(Scanner scanner, WatchList watchList, ArrayList<Media> sampleLibrary, MediaLog mediaLog) { //Constructor once called will create the 3 objects below without needing to pass in any parameters
+        this.scanner = scanner;
+        this.watchList = watchList;
+        this.sampleLibrary = sampleLibrary;
+        this.mediaLog = mediaLog;
 
         System.out.println("***************************");
         System.out.println("Welcome to my Media Project");
         System.out.println("***************************\n");
+
+    }
+
+    public void setMenu(){
 
         System.out.println("1 - View Sample Media");
         System.out.println("2 - WatchList");
@@ -49,15 +44,15 @@ public class MenuHandler {
                     scanner.nextLine();
                     switch (choice) {
                         case 1 -> {
-                            SampleLibraryMenuHandler sampleLibraryMenu = new SampleLibraryMenuHandler(sampleLibrary);
+                            SampleLibraryMenuHandler sampleLibraryMenu = new SampleLibraryMenuHandler(scanner, sampleLibrary);
                             sampleLibraryMenu.setUp();
                         }
                         case 2 -> {
-                            WatchListMenuHandler watchListMenu = new WatchListMenuHandler(watchList, scanner);
+                            WatchListMenuHandler watchListMenu = new WatchListMenuHandler(scanner, sampleLibrary, watchList);
                             watchListMenu.setUp();
                         }
                         case 3 -> {
-                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(mediaLog, watchList, scanner);
+                            MediaLogMenuHandler logMenu = new MediaLogMenuHandler(scanner, sampleLibrary, mediaLog, watchList);
                             logMenu.setUp();
                         }
                         case 4 -> {

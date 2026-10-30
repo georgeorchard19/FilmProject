@@ -1,7 +1,12 @@
+import java.util.ArrayList;
 import java.util.Scanner;
-public class MediaLogMenuHandler extends MenuHandler {
+public class MediaLogMenuHandler extends SubMenu {
 
-    public MediaLogMenuHandler(MediaLog mediaLog, WatchList watchList, Scanner scanner) {
+    private MediaLog mediaLog;
+    private WatchList watchList;
+
+    public MediaLogMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, MediaLog mediaLog, WatchList watchList) {
+        super(scanner, sampleMediaLibrary);
         this.mediaLog = mediaLog;
         this.watchList = watchList;
     }
@@ -24,8 +29,8 @@ public class MediaLogMenuHandler extends MenuHandler {
         while (inMenu) {
 
             setMenu();
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = getScanner().nextInt();
+            getScanner().nextLine();
 
             switch (choice) {
                 case 1 -> showLog();
@@ -62,7 +67,7 @@ public class MediaLogMenuHandler extends MenuHandler {
         }
 
         try {
-            Media media = SampleMediaLibrary.findMediaInLibrary(title, sampleLibrary);
+            Media media = SampleMediaLibrary.findMediaInLibrary(title, getSampleLibrary());
 
             if (mediaLog.isInList(title)) {
                 throw new DuplicateMediaException("Already Logged!");
