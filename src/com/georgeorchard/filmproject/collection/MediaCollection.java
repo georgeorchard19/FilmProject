@@ -1,3 +1,9 @@
+package com.georgeorchard.filmproject.collection;
+
+import com.georgeorchard.filmproject.exception.DuplicateMediaException;
+import com.georgeorchard.filmproject.exception.MediaNotFoundException;
+import com.georgeorchard.filmproject.model.Media;
+
 import java.util.ArrayList;
 import java.util.Collections;
 

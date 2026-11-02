@@ -1,6 +1,11 @@
-public class MediaLog extends MediaCollection{
+package com.georgeorchard.filmproject.collection;
 
-public void rateMedia(String title, double rating) throws InvalidRatingException{
+import com.georgeorchard.filmproject.exception.InvalidRatingException;
+import com.georgeorchard.filmproject.model.Media;
+
+public class MediaLog extends MediaCollection {
+
+public void rateMedia(String title, double rating) throws InvalidRatingException {
     for (Media media: items){
         if (media.getTitle().equalsIgnoreCase(title)){
             media.setPersonalRating(rating);

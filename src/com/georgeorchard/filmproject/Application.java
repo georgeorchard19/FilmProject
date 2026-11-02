@@ -1,7 +1,15 @@
+package com.georgeorchard.filmproject;
+
+import com.georgeorchard.filmproject.collection.MediaLog;
+import com.georgeorchard.filmproject.collection.WatchList;
+import com.georgeorchard.filmproject.menu.MainMenu;
+import com.georgeorchard.filmproject.model.Media;
+import com.georgeorchard.filmproject.source.SampleMediaLibrary;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Application {
 
         public static void main (String[]args) {
 

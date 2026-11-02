@@ -1,4 +1,6 @@
-public class Documentary extends Media{
+package com.georgeorchard.filmproject.model;
+
+public class Documentary extends Media {
 
     private final String TOPIC;
     private final String NARRATOR;

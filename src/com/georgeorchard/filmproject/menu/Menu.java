@@ -1,3 +1,7 @@
+package com.georgeorchard.filmproject.menu;
+
+import com.georgeorchard.filmproject.model.Media;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;

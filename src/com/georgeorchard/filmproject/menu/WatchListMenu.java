@@ -1,3 +1,11 @@
+package com.georgeorchard.filmproject.menu;
+
+import com.georgeorchard.filmproject.collection.WatchList;
+import com.georgeorchard.filmproject.exception.DuplicateMediaException;
+import com.georgeorchard.filmproject.exception.MediaNotFoundException;
+import com.georgeorchard.filmproject.model.Media;
+import com.georgeorchard.filmproject.source.SampleMediaLibrary;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

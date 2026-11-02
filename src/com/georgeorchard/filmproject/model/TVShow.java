@@ -1,3 +1,5 @@
+package com.georgeorchard.filmproject.model;
+
 public class TVShow extends Media {
 
     private final int totalEpisodes;

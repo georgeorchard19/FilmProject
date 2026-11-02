@@ -1,3 +1,11 @@
+package com.georgeorchard.filmproject.menu;
+
+import com.georgeorchard.filmproject.model.Documentary;
+import com.georgeorchard.filmproject.model.Media;
+import com.georgeorchard.filmproject.model.Movie;
+import com.georgeorchard.filmproject.model.TVShow;
+import com.georgeorchard.filmproject.source.SampleMediaLibrary;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

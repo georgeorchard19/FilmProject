@@ -1,3 +1,7 @@
+package com.georgeorchard.filmproject.collection;
+
+import com.georgeorchard.filmproject.model.Media;
+
 public class WatchList extends MediaCollection {
 
     @Override

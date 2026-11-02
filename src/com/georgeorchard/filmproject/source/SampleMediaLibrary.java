@@ -1,3 +1,11 @@
+package com.georgeorchard.filmproject.source;
+
+import com.georgeorchard.filmproject.exception.MediaNotFoundException;
+import com.georgeorchard.filmproject.model.Documentary;
+import com.georgeorchard.filmproject.model.Media;
+import com.georgeorchard.filmproject.model.Movie;
+import com.georgeorchard.filmproject.model.TVShow;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -163,7 +171,7 @@ public class SampleMediaLibrary {
         return docs;
     }
 
-    public static Media findMediaInLibrary(String title, ArrayList<Media> sampleLibrary) throws MediaNotFoundException{
+    public static Media findMediaInLibrary(String title, ArrayList<Media> sampleLibrary) throws MediaNotFoundException {
         for (Media media: sampleLibrary){
             if(media.getTitle().equalsIgnoreCase(title)){
                 return media;

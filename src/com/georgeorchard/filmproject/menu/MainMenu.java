@@ -1,6 +1,11 @@
+package com.georgeorchard.filmproject.menu;
+
+import com.georgeorchard.filmproject.collection.MediaLog;
+import com.georgeorchard.filmproject.collection.WatchList;
+import com.georgeorchard.filmproject.model.Media;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class MainMenu extends Menu {
 

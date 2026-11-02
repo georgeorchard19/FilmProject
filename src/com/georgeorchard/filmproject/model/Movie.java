@@ -1,3 +1,5 @@
+package com.georgeorchard.filmproject.model;
+
 public class Movie extends Media {
 
     private final String actors;
@@ -6,7 +8,7 @@ public class Movie extends Media {
     private final int oscars;
     public static int movieCount;
 
-    //SET CONSTRUCTOR for each Movie Object instance that is created
+    //SET CONSTRUCTOR Movie Object instance that is created
     public Movie(String title, int year, String genre, String actors, String plot, String director, int oscars, double rating) {
         super(title, year,genre, rating);
         this.actors = actors;

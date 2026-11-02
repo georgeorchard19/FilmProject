@@ -1,3 +1,7 @@
+package com.georgeorchard.filmproject.model;
+
+import com.georgeorchard.filmproject.exception.InvalidRatingException;
+
 public abstract class Media implements Comparable<Media> {
 
     private final String title; // final as cannot be changed
