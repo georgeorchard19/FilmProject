@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class MediaLogMenuHandler extends SubMenu {
+public class MediaLogMenu extends Menu {
 
     private final MediaLog mediaLog;
     private final WatchList watchList;
 
-    public MediaLogMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, MediaLog mediaLog, WatchList watchList) {
+    public MediaLogMenu(Scanner scanner, ArrayList<Media> sampleMediaLibrary, MediaLog mediaLog, WatchList watchList) {
         super(scanner, sampleMediaLibrary);
         this.mediaLog = mediaLog;
         this.watchList = watchList;
@@ -22,25 +22,20 @@ public class MediaLogMenuHandler extends SubMenu {
     }
 
     @Override
-    public void setUp() {
-        //create a variable of type int to track what the choice of the user is
-        boolean inMenu = true;
-
-        while (inMenu) {
-
-            setMenu();
-            int choice = getScanner().nextInt();
-            getScanner().nextLine();
-
+    protected boolean handleChoice(int choice) {
             switch (choice) {
                 case 1 -> showLog();
                 case 2 -> addToLog();
-                case 3 -> mediaLog.sortByTitle();
+                case 3 -> {
+                    mediaLog.sortByTitle();
+                    showLog();
+                }
                 case 4 -> System.out.println(mediaLog.getAverageRating());
-                case 5 -> inMenu = false;
+                case 5 -> {return false;}
+                default -> System.out.println("Number inputted is out of range! Input a correct number!\n");
             }
+            return true;
         }
-    }
 
     public void showLog() {
         mediaLog.printList();

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SampleLibraryMenuHandler extends SubMenu {
+public class SampleLibraryMenu extends Menu {
 
 
-    public SampleLibraryMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary) {
+    public SampleLibraryMenu(Scanner scanner, ArrayList<Media> sampleMediaLibrary) {
         super(scanner, sampleMediaLibrary);
     }
 
@@ -18,24 +18,18 @@ public class SampleLibraryMenuHandler extends SubMenu {
     }
 
     @Override
-    public void setUp() {
-
-        boolean inMenu = true;
-
-        while (inMenu) {
-
-            setMenu();
-            int choice = getScanner().nextInt();
-            getScanner().nextLine();
+    protected boolean handleChoice(int choice){
 
             switch (choice) {
                 case 1 -> displaySampleMovieLibrary();
                 case 2 -> displaySampleTVShowLibrary();
                 case 3 -> displaySampleDocumentaryLibrary();
-                case 4 -> inMenu = false;
+                case 4 -> {return false;}
+                default -> System.out.println("Number inputted is out of range! Input a correct number!\n");
             }
+            return true;
         }
-    }
+
 
     private void displaySampleMovieLibrary() {
         System.out.println("Below is a list of sample movies and accepted formats:");

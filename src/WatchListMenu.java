@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class WatchListMenuHandler extends SubMenu {
+public class WatchListMenu extends Menu {
 
     WatchList watchList;
 
-    public WatchListMenuHandler(Scanner scanner, ArrayList<Media> sampleMediaLibrary, WatchList watchList) {
+    public WatchListMenu(Scanner scanner, ArrayList<Media> sampleMediaLibrary, WatchList watchList) {
         super(scanner, sampleMediaLibrary);
         this.watchList = watchList;
     }
 
     @Override
-    public void setMenu() {
+    protected void setMenu() {
         System.out.println("\n--- Watch List Options ---");
         System.out.println("1 - View Watchlist");
         System.out.println("2 - Add to Watchlist");
@@ -19,27 +19,18 @@ public class WatchListMenuHandler extends SubMenu {
         System.out.println("4 - Exit Menu");
 
     }
-
     @Override
-    public void setUp() {
-
-        boolean inMenu = true;
-
-        while (inMenu) {
-
-            setMenu();
-
-            int choice = getScanner().nextInt();
-            getScanner().nextLine();
-
-            switch (choice) {
-                case 1 -> displayWatchlist();
-                case 2 -> addToWatchlist();
-                case 3 -> removeFromWatchlist();
-                case 4 -> inMenu = false;
-            }
+    protected boolean handleChoice(int choice){
+        switch (choice){
+            case 1-> displayWatchlist();
+            case 2-> addToWatchlist();
+            case 3-> removeFromWatchlist();
+            case 4-> {return false;}
+            default -> System.out.println("Number inputted is out of range! Input a correct number!\n");
         }
+        return true;
     }
+
 
     //call the watchList object method from the WatchList class to print what is in the current watchlist
     private void displayWatchlist() {

@@ -11,7 +11,7 @@ public class Main {
             ArrayList<Media> library = SampleMediaLibrary.setSampleLibrary();
 
 
-            MenuHandler menu = new MenuHandler(scanner, watchlist, library, mediaLog);
+            MainMenu menu = new MainMenu(scanner, watchlist, library, mediaLog);
             menu.setUp();
         }
 
