@@ -20,6 +20,7 @@ public class Application {
 
 
             MainMenu menu = new MainMenu(scanner, watchlist, library, mediaLog);
+            menu.printWelcome();
             menu.setUp();
         }
 

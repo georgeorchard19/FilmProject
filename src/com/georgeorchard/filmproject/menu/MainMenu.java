@@ -18,11 +18,12 @@ public class MainMenu extends Menu {
         super(scanner, sampleLibrary);
         this.watchList = watchList;
         this.mediaLog = mediaLog;
+    }
 
+    public void printWelcome(){
         System.out.println("***************************");
         System.out.println("Welcome to my Media Project");
         System.out.println("***************************\n");
-
     }
 
     @Override
