@@ -6,7 +6,6 @@ public class Movie extends Media {
     private final String plot; //final as cannot be changed
     private final String director; //final as cannot be changed
     private final int oscars;
-    public static int movieCount;
 
     //SET CONSTRUCTOR Movie Object instance that is created
     public Movie(String title, int year, String genre, String actors, String plot, String director, int oscars, double rating) {
