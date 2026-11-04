@@ -17,7 +17,7 @@ public class SampleLibraryMenu extends Menu {
     }
 
     @Override
-    public void setMenu() {
+    protected void setMenu() {
         System.out.println("\n--- Sample Library Options ---");
         System.out.println("1 - List of sample Movies");
         System.out.println("2 - List of sample TV shows");

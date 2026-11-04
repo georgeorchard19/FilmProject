@@ -23,7 +23,7 @@ public class MediaLogMenu extends Menu {
     }
 
     @Override
-    public void setMenu() {
+    protected void setMenu() {
         System.out.println("\n--- Watch Log Options ---");
         System.out.println("1 - View current log");
         System.out.println("2 - Add to watch-log");
