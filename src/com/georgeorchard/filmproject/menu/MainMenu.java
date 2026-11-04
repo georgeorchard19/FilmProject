@@ -13,7 +13,7 @@ public class MainMenu extends Menu {
     private final WatchList watchList;
     private final MediaLog mediaLog;
 
-    //setup menu using scanner and library handed down from super and create new watchlist and medialog
+
     public MainMenu(Scanner scanner, WatchList watchList, ArrayList<Media> sampleLibrary, MediaLog mediaLog) {
         super(scanner, sampleLibrary);
         this.watchList = watchList;
