@@ -10,10 +10,11 @@ import java.util.Scanner;
 public class MainMenu extends Menu {
 
     //TODO Add way to sort watchlist by year, alphabetically, group by genre, etc - COMPARATOR GENERICS
-    protected WatchList watchList;
-    protected MediaLog mediaLog;
+    private final WatchList watchList;
+    private final MediaLog mediaLog;
 
-    public MainMenu(Scanner scanner, WatchList watchList, ArrayList<Media> sampleLibrary, MediaLog mediaLog) { //Constructor once called will create the 3 objects below without needing to pass in any parameters
+    //setup menu using scanner and library handed down from super and create new watchlist and medialog
+    public MainMenu(Scanner scanner, WatchList watchList, ArrayList<Media> sampleLibrary, MediaLog mediaLog) {
         super(scanner, sampleLibrary);
         this.watchList = watchList;
         this.mediaLog = mediaLog;
@@ -34,7 +35,7 @@ public class MainMenu extends Menu {
     }
 
     @Override
-    protected boolean handleChoice(int choice) {//the bulk of conditional logic sits  here
+    protected boolean handleChoice(int choice) {
         switch (choice) {
             case 1 -> {
                 SampleLibraryMenu sampleLibraryMenu = new SampleLibraryMenu(getScanner(), getSampleLibrary());
