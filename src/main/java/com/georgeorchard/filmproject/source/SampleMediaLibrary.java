@@ -147,7 +147,7 @@ public class SampleMediaLibrary {
 
     }
 
-    public static ArrayList<TVShow> getTVshows(ArrayList<Media> sampleLibrary){
+    public static ArrayList<TVShow> getTVShows(ArrayList<Media> sampleLibrary){
         ArrayList<TVShow> shows = new ArrayList<>();
 
         for(Media media: sampleLibrary){

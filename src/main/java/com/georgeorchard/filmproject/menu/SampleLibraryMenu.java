@@ -58,9 +58,9 @@ public class SampleLibraryMenu extends Menu {
         System.out.println("Below is a list of sample TV Shows and accepted formats:");
         System.out.println("*******************************************************");
 
-        ArrayList<TVShow> TVShows = SampleMediaLibrary.getTVshows(getSampleLibrary());
+        ArrayList<TVShow> tvShows = SampleMediaLibrary.getTVShows(getSampleLibrary());
 
-        for (TVShow tv : TVShows) {
+        for (TVShow tv : tvShows) {
             System.out.println(tv);
             System.out.println();
         }
@@ -70,9 +70,9 @@ public class SampleLibraryMenu extends Menu {
         System.out.println("Below is a list of sample Documentaries and accepted formats:");
         System.out.println("*******************************************************");
 
-        ArrayList<Documentary> Docs = SampleMediaLibrary.getDocs(getSampleLibrary());
+        ArrayList<Documentary> docs = SampleMediaLibrary.getDocs(getSampleLibrary());
 
-        for (Documentary doc : Docs) {
+        for (Documentary doc : docs) {
             System.out.println(doc);
             System.out.println();
         }
