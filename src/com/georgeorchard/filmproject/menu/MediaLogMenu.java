@@ -54,7 +54,7 @@ public class MediaLogMenu extends Menu {
 
     public void addToLog() {
 
-        String input = promptUser("Enter what you would like to add to your watched log: (e.g. Gladiator, 7.7)");
+        String input = promptUser(String.format("Enter what you would like to add to your log: (e.g. Gladiator, 7.7) Rating must be between %.1f and %.1f ", Media.MIN_RATING, Media.MAX_RATING));
 
         String[] args = input.split(",");
 
@@ -87,7 +87,7 @@ public class MediaLogMenu extends Menu {
                 watchList.removeMedia(title);
             }
 
-            System.out.printf("%s added to log with %.2f rating%n", title, rating);
+            System.out.printf("%s added to log with %.1f rating%n", title, rating);
 
         } catch (InvalidRatingException | DuplicateMediaException | MediaNotFoundException ex) {
             System.out.println(ex.getMessage());
