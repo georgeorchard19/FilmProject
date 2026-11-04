@@ -50,7 +50,7 @@ public class SampleLibraryMenu extends Menu {
             System.out.println();
         }
 
-        System.out.println("Total Movies in sample " + Movie.movieCount);
+        System.out.println("Total Movies in sample " + movies.size());
 
     }
 

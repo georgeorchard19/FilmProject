@@ -15,7 +15,6 @@ public class Movie extends Media {
         this.plot = plot;
         this.director = director;
         this.oscars = oscars;
-        movieCount++;
     }
 
     public String getActors(){
@@ -30,7 +29,6 @@ public class Movie extends Media {
     public int getOscars(){
         return this.oscars;
     }
-    public static int getMovieCount(){ return movieCount;}
 
     @Override
     public String toString(){
