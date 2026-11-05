@@ -75,7 +75,7 @@ public class MediaLogMenu extends Menu {
         try {
             if (mediaLog.isInList(inputTitle)) {
                 String storedTitle = mediaLog.updateRating(inputTitle, rating);
-                System.out.printf("%s: updated rating to %.1f", storedTitle, rating);
+                System.out.printf("%s: updated rating to %.1f%n", storedTitle, rating);
                 return;
             }
 
