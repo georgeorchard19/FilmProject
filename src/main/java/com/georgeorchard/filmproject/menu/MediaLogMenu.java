@@ -73,12 +73,12 @@ public class MediaLogMenu extends Menu {
         }
 
         try {
-            Media media = SampleMediaLibrary.findMediaInLibrary(title, getSampleLibrary());
-
             if (mediaLog.isInList(title)) {
-                throw new DuplicateMediaException("Already Logged!");
+                System.out.println(mediaLog.updateRating(title, rating));
+                return;
             }
 
+            Media media = SampleMediaLibrary.findMediaInLibrary(title, getSampleLibrary());
             media.setPersonalRating(rating);
             mediaLog.addMedia(media);
 
@@ -87,7 +87,7 @@ public class MediaLogMenu extends Menu {
                 watchList.removeMedia(title);
             }
 
-            System.out.printf("%s added to log with %.1f rating%n", title, rating);
+            System.out.printf("%s added to log with %.1f rating%n", media.getTitle(), rating);
 
         } catch (InvalidRatingException | DuplicateMediaException | MediaNotFoundException ex) {
             System.out.println(ex.getMessage());

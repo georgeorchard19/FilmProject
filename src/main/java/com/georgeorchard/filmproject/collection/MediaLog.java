@@ -1,18 +1,20 @@
 package com.georgeorchard.filmproject.collection;
 
 import com.georgeorchard.filmproject.exception.InvalidRatingException;
+import com.georgeorchard.filmproject.exception.MediaNotFoundException;
 import com.georgeorchard.filmproject.model.Media;
 
 public class MediaLog extends MediaCollection {
 
-public void rateMedia(String title, double rating) throws InvalidRatingException {
+public String updateRating(String title, double rating) throws InvalidRatingException, MediaNotFoundException {
     for (Media media: items){
         if (media.getTitle().equalsIgnoreCase(title)){
             media.setPersonalRating(rating);
             media.markAsSeen();
-            break;
+            return String.format("%s: updated rating to %.1f%n", media.getTitle(), rating);
         }
     }
+    throw new MediaNotFoundException("Cannot Update as not seen yet!");
 }
 
 public double getAverageRating() {
