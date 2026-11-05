@@ -41,7 +41,7 @@ public class MediaLogMenu extends Menu {
                     mediaLog.sortByTitle();
                     showLog();
                 }
-                case 4 -> System.out.println(mediaLog.getAverageRating());
+                case 4 -> System.out.printf("Average Rating of Log: %.1f", mediaLog.getAverageRating());
                 case 5 -> {return false;}
                 default -> System.out.println("Number inputted is out of range! Input a correct number!\n");
             }
