@@ -11,10 +11,10 @@ public String updateRating(String title, double rating) throws InvalidRatingExce
         if (media.getTitle().equalsIgnoreCase(title)){
             media.setPersonalRating(rating);
             media.markAsSeen();
-            return String.format("%s: updated rating to %.1f%n", media.getTitle(), rating);
+            return media.getTitle();
         }
     }
-    throw new MediaNotFoundException("Cannot Update as not seen yet!");
+    throw new MediaNotFoundException("Media not in log!");
 }
 
 public double getAverageRating() {
