@@ -62,7 +62,7 @@ public class MediaLogMenu extends Menu {
             System.out.println("invalid format, please use: Title, Rating");
             return;
         }
-        String title = args[0].trim();
+        String inputTitle = args[0].trim();
         double rating;
 
         try {
@@ -73,18 +73,19 @@ public class MediaLogMenu extends Menu {
         }
 
         try {
-            if (mediaLog.isInList(title)) {
-                System.out.println(mediaLog.updateRating(title, rating));
+            if (mediaLog.isInList(inputTitle)) {
+                String storedTitle = mediaLog.updateRating(inputTitle, rating);
+                System.out.printf("%s: updated rating to %.1f", storedTitle, rating);
                 return;
             }
 
-            Media media = SampleMediaLibrary.findMediaInLibrary(title, getSampleLibrary());
+            Media media = SampleMediaLibrary.findMediaInLibrary(inputTitle, getSampleLibrary());
             media.setPersonalRating(rating);
             mediaLog.addMedia(media);
 
 
-            if (watchList.isInList(title)) {
-                watchList.removeMedia(title);
+            if (watchList.isInList(inputTitle)) {
+                watchList.removeMedia(inputTitle);
             }
 
             System.out.printf("%s added to log with %.1f rating%n", media.getTitle(), rating);
