@@ -32,11 +32,11 @@ public class Movie extends Media {
     @Override
     public String toString(){
         return String.format("%s (%d) | %s | Director: %s | %s | %.1f/%.0f \nPLOT: %s",
-            getTitle(), getYear(), getGenre(), director, actors, getRating(), Media.MAX_RATING, plot);
+            getTitle(), getYear(), getGenre(), director, actors, getRating(), Media.MAX_SOURCE_RATING, plot);
     }
 
     public String getSummary(){
-        return String.format("%s | %s | %s | %.1f/%.0f", getTitle(), director, getGenre(), getRating(), Media.MAX_RATING);
+        return String.format("%s | %s | %s | %.1f/%.0f", getTitle(), director, getGenre(), getRating(), Media.MAX_SOURCE_RATING);
     }
 
 }

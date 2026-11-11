@@ -9,8 +9,9 @@ public abstract class Media implements Comparable<Media> {
     private final String genre;
     private double rating; // not final as can change over time via API
     private double personalRating;
-    public static final double MIN_RATING = 0.0;
-    public static final double MAX_RATING = 10.0;
+    public static final double MIN_PERSONAL_RATING = 0.0;
+    public static final double MAX_PERSONAL_RATING = 10.0;
+    public static final double MAX_SOURCE_RATING = 10.0;
 
     public int compareTo (Media m){
         return title.compareTo(m.getTitle());
@@ -37,8 +38,8 @@ public abstract class Media implements Comparable<Media> {
     }
 
     public void setPersonalRating(double personalRating) throws InvalidRatingException {
-        if (personalRating < MIN_RATING || personalRating > MAX_RATING){
-            throw new InvalidRatingException(String.format("Invalid Rating: %.1f! Must be between %.1f and %.1f", personalRating, MIN_RATING, MAX_RATING));
+        if (personalRating < MIN_PERSONAL_RATING || personalRating > MAX_PERSONAL_RATING){
+            throw new InvalidRatingException(String.format("Invalid Rating: %.1f! Must be between %.1f and %.1f", personalRating, MIN_PERSONAL_RATING, MAX_PERSONAL_RATING));
         }
             this.personalRating = personalRating;
 
