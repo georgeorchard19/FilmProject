@@ -34,7 +34,7 @@ public class Movie extends Media {
         return String.format("%s (%d) | %s | Director: %s | %s | %.1f/%.0f \nPLOT: %s",
             getTitle(), getYear(), getGenre(), director, actors, getRating(), Media.MAX_RATING, plot);
     }
-    //TODO: USE IN MAIN FOR USER TO INPUT A STRING AND PROVIDE A SUMMARY FROM THE LIST
+
     public String getSummary(){
         return String.format("%s | %s | %s | %.1f/%.0f", getTitle(), director, getGenre(), getRating(), Media.MAX_RATING);
     }

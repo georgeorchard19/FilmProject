@@ -40,8 +40,6 @@ public class TVShow extends Media {
                 getTitle(), getGenre(), totalEpisodes, totalSeasons, network, getRating(), Media.MAX_RATING, plot);
     }
 
-
-
     public String getSummary(){
         return String.format("%s | %s | %.1f/%.0f", getTitle(), getGenre(), getRating(), Media.MAX_RATING);
     }
