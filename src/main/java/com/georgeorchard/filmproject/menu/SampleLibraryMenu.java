@@ -84,6 +84,11 @@ public class SampleLibraryMenu extends Menu {
 
     private void displaySearchByTitle() {
         String userSearch = promptUser("input text to search Title: ");
+
+        while (userSearch.isBlank()){
+            userSearch = promptUser("ERROR! Please type a string!!");
+        }
+
         ArrayList<Media> results = SampleMediaLibrary.searchLibraryByTitle(userSearch, getSampleLibrary());
 
         if (results.isEmpty()) {
