@@ -10,7 +10,6 @@ public String updateRating(String title, double rating) throws InvalidRatingExce
     for (Media media: items){
         if (media.getTitle().equalsIgnoreCase(title)){
             media.setPersonalRating(rating);
-            media.markAsSeen();
             return media.getTitle();
         }
     }
