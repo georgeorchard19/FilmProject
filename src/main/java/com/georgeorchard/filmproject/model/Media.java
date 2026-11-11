@@ -9,7 +9,6 @@ public abstract class Media implements Comparable<Media> {
     private final String genre;
     private double rating; // not final as can change over time via API
     private double personalRating;
-    private boolean seen;
     public static final double MIN_RATING = 0.0;
     public static final double MAX_RATING = 10.0;
 
@@ -47,14 +46,6 @@ public abstract class Media implements Comparable<Media> {
 
     public double getPersonalRating(){ //sets rating to whatever is passed in
         return personalRating;
-    }
-
-    public void markAsSeen() {
-        seen = true;
-    }
-
-    public boolean isSeen() {
-        return seen;
     }
 
     public abstract String getSummary();

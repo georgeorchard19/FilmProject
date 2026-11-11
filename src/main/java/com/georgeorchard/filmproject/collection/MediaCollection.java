@@ -33,19 +33,6 @@ public abstract class MediaCollection {
             return items.stream().anyMatch(media -> media.getTitle().equalsIgnoreCase(title));
         }
 
-        public void markAsSeen(String title) {
-            for (Media media : items) {
-                if (media.getTitle().equalsIgnoreCase(title)) {
-                    media.markAsSeen();
-                    break;
-                }
-            }
-            if (!isInList(title)) {
-                System.out.println("Not in collection, cannot be marked as seen!");
-            }
-
-        }
-
         public abstract void printList();
 
         public void sortByTitle(){
