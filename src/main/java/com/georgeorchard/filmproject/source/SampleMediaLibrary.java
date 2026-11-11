@@ -8,6 +8,7 @@ import com.georgeorchard.filmproject.model.TVShow;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class SampleMediaLibrary {
 
@@ -178,6 +179,12 @@ public class SampleMediaLibrary {
             }
         }
         throw new MediaNotFoundException("'" + title + "' Not in sample library!");
+    }
+
+    public static ArrayList<Media> searchLibraryByTitle(String userSearch, ArrayList<Media> sampleLibrary){
+        return sampleLibrary.stream().filter(media -> media.getTitle().toLowerCase().contains(userSearch.toLowerCase()))
+               .collect(Collectors.toCollection(ArrayList::new));
+
     }
 
 }
