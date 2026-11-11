@@ -37,10 +37,10 @@ public class TVShow extends Media {
     @Override
     public String toString() {
         return String.format("%s | %s | Total episodes: %d | Total Seasons: %d | Streaming on: %s | %.1f/%.0f \nPLOT: %s",
-                getTitle(), getGenre(), totalEpisodes, totalSeasons, network, getRating(), Media.MAX_RATING, plot);
+                getTitle(), getGenre(), totalEpisodes, totalSeasons, network, getRating(), Media.MAX_SOURCE_RATING, plot);
     }
 
     public String getSummary(){
-        return String.format("%s | %s | %.1f/%.0f", getTitle(), getGenre(), getRating(), Media.MAX_RATING);
+        return String.format("%s | %s | %.1f/%.0f", getTitle(), getGenre(), getRating(), Media.MAX_SOURCE_RATING);
     }
 }

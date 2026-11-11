@@ -54,7 +54,7 @@ public class MediaLogMenu extends Menu {
 
     public void addToLog() {
 
-        String input = promptUser(String.format("Enter what you would like to add to your log: (e.g. Gladiator, 7.7) Rating must be between %.1f and %.1f ", Media.MIN_RATING, Media.MAX_RATING));
+        String input = promptUser(String.format("Enter what you would like to add to your log: (e.g. Gladiator, 7.7) Rating must be between %.1f and %.1f ", Media.MIN_PERSONAL_RATING, Media.MAX_PERSONAL_RATING));
 
         String[] args = input.split(",");
 

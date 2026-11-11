@@ -23,12 +23,12 @@ public class Documentary extends Media {
     @Override
     public String toString(){
         return String.format("%s (%d) | %s | Narrator: %s | %s | %.1f/%.0f",
-                getTitle(), getYear(), getGenre(), narrator, topic, getRating(), Media.MAX_RATING);
+                getTitle(), getYear(), getGenre(), narrator, topic, getRating(), Media.MAX_SOURCE_RATING);
     }
 
     @Override
     public String getSummary(){
-        return String.format("%s | %s | %s | %.1f/%.0f", getTitle(), narrator, topic, getRating(), Media.MAX_RATING);
+        return String.format("%s | %s | %s | %.1f/%.0f", getTitle(), narrator, topic, getRating(), Media.MAX_SOURCE_RATING);
     }
 
 
