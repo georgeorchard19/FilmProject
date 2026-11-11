@@ -30,12 +30,7 @@ public abstract class MediaCollection {
         }
 
         public boolean isInList(String title) {
-            for (Media media : items) {
-                if (media.getTitle().equalsIgnoreCase(title)) {
-                    return true;
-                }
-            }
-            return false;
+            return items.stream().anyMatch(media -> media.getTitle().equalsIgnoreCase(title));
         }
 
         public void markAsSeen(String title) {
