@@ -182,7 +182,8 @@ public class SampleMediaLibrary {
     }
 
     public static ArrayList<Media> searchLibraryByTitle(String userSearch, ArrayList<Media> sampleLibrary){
-        return sampleLibrary.stream().filter(media -> media.getTitle().toLowerCase().contains(userSearch.toLowerCase()))
+        String lowerCaseSearch = userSearch.toLowerCase();
+        return sampleLibrary.stream().filter(media -> media.getTitle().toLowerCase().contains(lowerCaseSearch))
                .collect(Collectors.toCollection(ArrayList::new));
 
     }
