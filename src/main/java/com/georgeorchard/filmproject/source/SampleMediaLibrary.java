@@ -181,12 +181,7 @@ public class SampleMediaLibrary {
         throw new MediaNotFoundException("'" + title + "' Not in sample library!");
     }
 
-    public static ArrayList<Media> searchLibraryByTitle(String userSearch, ArrayList<Media> sampleLibrary){
-        String lowerCaseSearch = userSearch.toLowerCase();
-        return sampleLibrary.stream().filter(media -> media.getTitle().toLowerCase().contains(lowerCaseSearch))
-               .collect(Collectors.toCollection(ArrayList::new));
 
-    }
 
 }
 
