@@ -50,4 +50,8 @@ public abstract class Media implements Comparable<Media> {
     }
 
     public abstract String getSummary();
+
+    public boolean titleContains(String lowerCaseSearch){
+        return title.toLowerCase().contains(lowerCaseSearch);
+    }
 }
